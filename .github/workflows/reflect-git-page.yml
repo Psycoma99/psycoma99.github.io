@@ -23,11 +23,15 @@ jobs:
                 key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
                 restore-keys: |
                     ${{ runner.os }}-node-
+
+            - name : Install Packages
+              run : npm ci
             
-            - name : Setting Git Configuration
-              run : |
-                git config user.name "Psycoma99"
-                git config user.email "psycoma99@github.com"
-      
-            - run : npm ci
-            - run : npm run deploy
+            - name : Build 
+              run : npm run build
+
+            - name : Deploy 
+              uses : peaceiris/actions-gh-pages@v3
+              with :
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./build

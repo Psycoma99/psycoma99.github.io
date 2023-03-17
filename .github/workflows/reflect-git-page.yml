@@ -23,6 +23,11 @@ jobs:
                 key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
                 restore-keys: |
                     ${{ runner.os }}-node-
+            
+            - name : Setting Git Configuration
+              run |
+                git config user.name "psycoma99"
+                git config user.email "psycoma99@github.com"
       
             - run : npm ci
             - run : npm run deploy

@@ -1,6 +1,6 @@
 name : reflect-git-page
-run name: ${{ github.actor}}가 깃허브 페이지를 수정했습니다.
-on : [push]
+run-name: ${{ github.actor}}가 깃허브 페이지를 수정했습니다.
+on: [push]
 jobs : 
   upload-statics:
     runs-on : ubutun-22.04

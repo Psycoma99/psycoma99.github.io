@@ -25,7 +25,7 @@ jobs:
                     ${{ runner.os }}-node-
             
             - name : Setting Git Configuration
-              run |
+              run : |
                 git config user.name "psycoma99"
                 git config user.email "psycoma99@github.com"
       

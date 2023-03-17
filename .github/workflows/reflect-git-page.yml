@@ -26,7 +26,7 @@ jobs:
             
             - name : Setting Git Configuration
               run : |
-                git config user.name "psycoma99"
+                git config user.name "Psycoma99"
                 git config user.email "psycoma99@github.com"
       
             - run : npm ci

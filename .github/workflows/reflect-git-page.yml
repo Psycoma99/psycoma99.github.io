@@ -2,26 +2,27 @@ name : reflect-git-page
 run-name: ${{ github.actor}}가 깃허브 페이지를 수정했습니다.
 on:
   push:
-    branches:
-    - main
-jobs : 
-  upload:
-    runs-on : ubutun-22.04
-    steps:
-      - uses : actions/checkout@v3
+    branches: 
+        - main
 
-      - name : Setup Node
-      uses : actions/setup-node@v3
-      with:
-        node-version : '16'
+jobs: 
+    upload:
+        runs-on : ubuntu-22.04
+        steps:
+            - uses : actions/checkout@v3
+            
+            - name : Setup Node
+              uses : actions/setup-node@v3
+              with:
+                node-version : '16'
       
-      - name : Cache dependencies
-        uses : actions/cache@v2
-        with :
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+            - name : Cache dependencies
+              uses : actions/cache@v2
+              with :
+                path: ~/.npm
+                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                    ${{ runner.os }}-node-
       
-      - run : npm ci
-      - run : npm run deploy
+            - run : npm ci
+            - run : npm run deploy

@@ -1,5 +1,7 @@
 function Clock() {
-    return (<div></div>);
+    return (<div>
+        17:00
+    </div>);
 }
 
 export default Clock;

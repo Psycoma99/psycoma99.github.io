@@ -1,5 +1,5 @@
-import Clock from "../../shared/component/Clock";
-import Weather from "../../shared/component/Weather";
+import Clock from "shared/component/Clock";
+import Weather from "shared/component/Weather";
 import { Wrapper, Container, MessageBox } from "./style"
 
 function Main() {

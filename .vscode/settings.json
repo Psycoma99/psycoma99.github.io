@@ -1,0 +1,5 @@
+{
+    "editor.tabCompletion": "onlySnippets",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.snippetSuggestions": "top",
+}
